@@ -15,3 +15,8 @@ As a user, I want the ability to...
 - Change an event
 - Delete an event
 - View a single event page that hosts multiple posts
+
+# Wireframe and ERD
+
+- https://github.com/alexbannon/flake/blob/master/IMG_0717.JPG
+- https://github.com/alexbannon/flake/blob/master/IMG_0720.JPG
