@@ -1,12 +1,13 @@
+<h4 class="flash_message"><%=flash[:message]%></h4>
 <%= form_for @user do |f| %>
   <%= f.label :first_name, "First Name" %>:<br .>
-  <%= f.text_field :first_name, :required => true %><br />
+  <%= f.text_field :first_name, :required => true, :value => flash[:first_name] %><br />
   <%= f.label :last_name, "Last Name" %>:<br .>
-  <%= f.text_field :last_name, :required => true %><br />
+  <%= f.text_field :last_name, :required => true, :value => flash[:last_name] %><br />
   <%= f.label :email %>:<br .>
-  <%= f.email_field :email, :required => true %><br />
+  <%= f.email_field :email, :required => true, :value => flash[:email] %><br />
   <%= f.label :username %>:<br .>
-  <%= f.text_field :username, :required => true %><br />
+  <%= f.text_field :username, :required => true, :value => flash[:username] %><br />
   <%= f.label :password_digest, "Confirm Password" %>:<br .>
   <%= f.password_field :password_digest, :required => true %><br />
   <%= f.submit %>

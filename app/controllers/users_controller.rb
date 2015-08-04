@@ -59,4 +59,19 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def update
+    @user = User.find(session[:user_id])
+    if @user.password_digest != BCrypt::Password.new(params[:user][:password_digest])
+      message = "Your password's wrong!"
+    else
+      @user.update()
+    end
+    flash[:message] = message
+    flash[:first_name] = params[:user][:first_name]
+    flash[:last_name] = params[:user][:last_name]
+    flash[:email] = params[:user][:email]
+    flash[:username] = params[:user][:username]
+    redirect_to :back
+  end
+
 end
