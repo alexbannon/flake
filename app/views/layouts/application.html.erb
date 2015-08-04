@@ -2,12 +2,35 @@
 <html>
 <head>
   <title>Flake</title>
+  <link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if session[:user_id] %>
+    <div class="top_bar">
+      <a href="/" class="logo_link"><%= image_tag("flake_logo.png", class: "logo")%></a>
+      <form method="get" action="/search_results" class="search_form">
+          <input type="text" name="user_search" class= "search_bar" placeholder="Search">
+      </form>
+      <a href="/users/<%=session[:user_id]%>/events/new"><div class="new_event_button">New Event</div></a>
+      <a href="/signout"><div class="signout_button">Sign Out</div></a>
+    </div>
+  <% else %>
+    <div class="top_bar">
+      <a href="/" class="logo_link"><%= image_tag("flake_logo.png", class: "logo")%></a>
+      <a>
+        <div class="signin_button">
+          <span class="signin_word">Sign In!</span>
+          <%= form_tag("/sign_in", method: "post", class: "signin") do %>
+            <input type="text" name="user[username]" placeholder="username" required/><br />
+            <input type="password" name="user[password_digest]" placeholder="password" required/><br />
+          <% end %>
+        </div>
+      </a>
+    </div>
+  <% end %>
 <%= yield %>
 
 </body>

@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $(".signin_word").on("click", function(event) {
+    event.preventDefault();
+    $(".signin").toggle("slow");
+    console.log("click");
+  })
+  $(".signin").keypress(function(e) {
+    if(e.which == 10 || e.which == 13) {
+      this.submit();
+    }
+  })
+});

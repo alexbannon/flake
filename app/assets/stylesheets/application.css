@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.top_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  min-width: 770px;
+  height: 120px;
+  background-color: rgb(85, 153, 187);
+}
+.logo_link {
+  margin: 20px 0 0 0;
+  height: 97px;
+}
+.logo {
+  height: 97px;
+}
+.search_form {
+}
+.search_bar {
+  flex: 0 1 0;
+  width: 250px;
+  margin: 42px 0 0 20px;
+}
+.new_event_button, .signout_button, .signup_button, .signin_button {
+  flex: 0 1 0;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 37px 0 0 0;
+  color: rgb(20, 90, 130);
+}
+.left_column_homepage {
+  font-family: 'Cagliostro', sans-serif;
+  margin: 25px auto 0 auto;
+}
+.right_column_homepage {
+  font-family: 'Cagliostro', sans-serif;
+  margin: 25px auto 0 auto;
+  text-align: center;
+}
+.flex_homepage {
+  display: flex;
+  flex-direction: row;
+}
+.flash_message {
+  color: red;
+}
+.signin_button {
+  position: relative;
+  height: 84px;
+  width: 131px;
+}
+.signin {
+  display: none;
+}
