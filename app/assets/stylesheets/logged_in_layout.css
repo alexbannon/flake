@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+.main_body_container {
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  min-width: 770px;
+  max-width: 1299px;
+}
+.left_sidebar {
+  border: 1px solid black;
+  flex: 1 1 auto;
+  margin: 0 5px;
+}
+.main_layout {
+  border: 1px solid black;
+  flex: 2.5 1 auto;
+  margin: 0 5px;
+}
+.right_sidebar {
+  border: 1px solid black;
+  flex: 1 1 auto;
+  margin: 0 5px;
+}
