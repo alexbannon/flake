@@ -15,7 +15,13 @@
           <input type="text" name="user_search" class= "search_bar" placeholder="Search">
       </form>
       <a href="/users/<%=session[:user_id]%>/events/new"><div class="new_event_button">New Event</div></a>
-      <a href="/signout"><div class="signout_button">Sign Out</div></a>
+      <div class="settings_container">
+        <div class="settings_button">Settings</div>
+        <div class="dropdown_container">
+          <div class="dropdown" id="profile"><a href="/users/<%=session[:user_id]%>/profile" class="dropdown">Profile</a></div>
+          <div class="dropdown" id="signout"><a href="/signout" class="dropdown">Signout</a></div>
+        </div>
+      </div>
     </div>
   <% else %>
     <div class="top_bar">

@@ -44,7 +44,7 @@ a {
   width: 250px;
   margin: 42px 0 0 20px;
 }
-.new_event_button, .signout_button, .signup_button, .signin_button {
+.new_event_button, .settings_button, .signup_button, .signin_button {
   flex: 0 1 0;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   font-size: 1.5em;
@@ -75,4 +75,24 @@ a {
 }
 .signin {
   display: none;
+}
+.dropdown {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 1em;
+  text-align: center;
+  color: black;
+}
+.dropdown_container {
+  display: none;
+}
+#profile, #signout {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.settings_button {
+  cursor: pointer;
+}
+.edit_user {
+  text-align: center;
+  margin: 25px auto;
 }

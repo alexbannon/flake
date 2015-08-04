@@ -1,0 +1,13 @@
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>:<br .>
+  <%= f.text_field :first_name, :required => true %><br />
+  <%= f.label :last_name %>:<br .>
+  <%= f.text_field :last_name, :required => true %><br />
+  <%= f.label :email %>:<br .>
+  <%= f.email_field :email, :required => true %><br />
+  <%= f.label :username %>:<br .>
+  <%= f.text_field :username, :required => true %><br />
+  <%= f.label :password %>:<br .>
+  <%= f.password_field :password, :required => true %><br />
+  <%= f.submit %>
+<% end %>

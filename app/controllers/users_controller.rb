@@ -55,4 +55,8 @@ class UsersController < ApplicationController
   def sign_in_page
   end
 
+  def profile
+    @user = User.find(session[:user_id])
+  end
+
 end
