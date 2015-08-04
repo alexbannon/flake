@@ -20,3 +20,12 @@
   <%= f.password_field :password, :required => true %><br />
   <%= f.submit %>
 <% end %>
+<div id="delete_button_container">
+  <span id = "delete_button">Delete!</span>
+</div>
+<div id="delete_form_container">
+  <%= form_tag(user_path(@user), method: "delete") do %>
+    <%= password_field_tag(:password, "", placeholder: "Password") %>
+    <%= submit_tag("Delete!", class: "delete_user") %>
+  <% end %>
+</div>

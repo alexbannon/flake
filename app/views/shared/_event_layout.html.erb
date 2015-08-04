@@ -1,12 +1,15 @@
 <div class= "main_body_container">
   <div class = "left_sidebar">
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
+    <h4>Upcoming Events</h4>
+    <% @events.each do |event| %>
+      <div class="left_event_container">
+        <div class="left_title"><%=event.title%></div>
+        <%= image_tag(event.event_image_url, class: "left_event_image") %>
+      </div>
+    <% end %>
   </div>
   <div class = "main_layout">
+    <h4><%=@user.first_name%> <%=@user.last_name%>'s Events</h4>
     <% @user.events.each do |event| %>
     <div class="event_container">
       <h2 class="event_title"><%= event.title %></h2>
@@ -17,16 +20,13 @@
     <% end %>
   </div>
   <div class = "right_sidebar">
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
-    <p>Hello</p>
+    <h4>Right Sidebar</h4>
+    <div class="right_container">
+      <p class="temp">Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+    </div>
   </div>
 </div>
-
-
-<h1><%=@user.username%> Show Page</h1>
-<% @user.events.each do |event| %>
-  <%= event.title %>
-<% end %>

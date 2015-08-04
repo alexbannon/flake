@@ -27,6 +27,8 @@ $(document).ready(function() {
   })
   $(".settings_button").on("click", function() {
     $(".dropdown_container").toggle("slow");
-
+  })
+  $(".delete_user").on("click", function() {
+    $(".delete_user_verification").toggle();
   })
 });

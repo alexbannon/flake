@@ -11,28 +11,70 @@
   max-width: 1299px;
 }
 .left_sidebar {
-  border: 1px solid black;
   flex: 1 1 auto;
   margin: 0 5px;
 }
 .main_layout {
-  border: 1px solid red;
   flex: 2 1 auto;
-  margin: 0 5px;
+  margin: 0 auto;
+  width: 532px;
 }
 .right_sidebar {
-  border: 1px solid black;
   flex: 1 1 auto;
   margin: 0 5px;
 }
 .event_image {
   width: 400px;
+  border-radius: 10px;
+  margin: 0 auto 5px auto;
+}
+.left_event_image {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+.left_event_container {
+  background-color: rgb(65, 133, 167);
+  margin: 10px auto 10px auto;
+  border-radius: 5px;
+  max-width: 200px;
+
 }
 
 .event_container {
-  border: 1px solid blue;
-  margin: 0 auto 20px auto;
+  margin: 10px auto 10px auto;
+  background-color: rgb(115, 183, 217);
+  border-radius: 5px;
+  max-width: 550px;
+}
+.right_container {
+  background-color: rgb(65, 133, 167);
+  margin: 10px auto 10px auto;
+  border-radius: 5px;
+  max-width: 200px;
 }
 .event_title, .event_content, .event_time {
   font-family: 'Cagliostro', sans-serif;
+}
+
+#delete_button {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1px 5px;
+  background-color: red;
+}
+#delete_button_container {
+  text-align: center;
+}
+#delete_form_container {
+  text-align: center;
+  margin: 10px auto;
+}
+.delete_user {
+  background-color: red;
+  border-radius: 10px;
+}
+.temp {
+  width: 150px;
 }

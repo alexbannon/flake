@@ -20,7 +20,9 @@
 a {
   text-decoration: none;
 }
-
+body {
+  background: rgb(1, 102, 167);
+}
 .top_bar {
   display: flex;
   flex-direction: row;

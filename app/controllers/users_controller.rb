@@ -43,6 +43,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(session[:user_id])
+    if @user && @user.authenticate(params[:password])
+      @user.destroy
+      reset_session
+      render "homepage"
+    else
+      flash[:message] = "Error deleting user. Try again"
+      redirect_to :back
+    end
+  end
 
 
 
