@@ -16,12 +16,23 @@
   margin: 0 5px;
 }
 .main_layout {
-  border: 1px solid black;
-  flex: 2.5 1 auto;
+  border: 1px solid red;
+  flex: 2 1 auto;
   margin: 0 5px;
 }
 .right_sidebar {
   border: 1px solid black;
   flex: 1 1 auto;
   margin: 0 5px;
+}
+.event_image {
+  width: 400px;
+}
+
+.event_container {
+  border: 1px solid blue;
+  margin: 0 auto 20px auto;
+}
+.event_title, .event_content, .event_time {
+  font-family: 'Cagliostro', sans-serif;
 }

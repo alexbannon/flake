@@ -1,3 +1,4 @@
+<%= render "shared/event_layout" %>
 <h1><%=@user.username%> Show Page</h1>
 <% @user.events.each do |event| %>
   <%= event.title %>

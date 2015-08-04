@@ -1,0 +1,32 @@
+<div class= "main_body_container">
+  <div class = "left_sidebar">
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+  </div>
+  <div class = "main_layout">
+    <% @user.events.each do |event| %>
+    <div class="event_container">
+      <h2 class="event_title"><%= event.title %></h2>
+      <h4 class="event_content"><%= event.event_content %></h4>
+      <h4 class="event_time"><%= event.event_time.strftime("%b %e, %Y at %l:%M %p") %></h4>
+      <%= image_tag(event.event_image_url, class: "event_image") %>
+    </div>
+    <% end %>
+  </div>
+  <div class = "right_sidebar">
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+  </div>
+</div>
+
+
+<h1><%=@user.username%> Show Page</h1>
+<% @user.events.each do |event| %>
+  <%= event.title %>
+<% end %>

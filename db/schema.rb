@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150803151447) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "event_content"
+    t.string   "event_image_url"
+    t.datetime "event_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
