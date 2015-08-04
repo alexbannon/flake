@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate, only: [:homepage, :create, :sign_in, :sign_in_page]
+  skip_before_action :authorize, only: [:homepage, :create, :sign_in, :sign_in_page]
   def homepage
     if session[:user_id]
       redirect_to user_path(User.find(session[:user_id]))
@@ -14,19 +14,25 @@ class UsersController < ApplicationController
   end
 
   def create
-    if User.find_by(username: params[:user][:username])
-      message = "Username already exists. Try another one."
-    else
-      @user = User.create(first_name: params[:user][:first_name], last_name: params[:user][:last_name], username: params[:user][:username], email: params[:user][:email], password_digest: BCrypt::Password.create(params[:user][:password].strip))
-      session[:user_id] = @user.id
+    @user = User.new(user_params)
+    if @user.save
       redirect_to user_path(@user)
-      return
+    else
+      render "homepage"
     end
-    flash[:message] = message
-    flash[:first_name] = params[:user][:first_name]
-    flash[:last_name] = params[:user][:last_name]
-    flash[:email] = params[:user][:email]
-    redirect_to :back
+    # if User.find_by(username: params[:user][:username])
+    #   message = "Username already exists. Try another one."
+    # else
+    #   @user = User.create(first_name: params[:user][:first_name], last_name: params[:user][:last_name], username: params[:user][:username], email: params[:user][:email], password_digest: BCrypt::Password.create(params[:user][:password].strip))
+    #   session[:user_id] = @user.id
+    #   redirect_to user_path(@user)
+    #   return
+    # end
+    # flash[:message] = message
+    # flash[:first_name] = params[:user][:first_name]
+    # flash[:last_name] = params[:user][:last_name]
+    # flash[:email] = params[:user][:email]
+    # redirect_to :back
   end
 
   def signout
@@ -74,4 +80,8 @@ class UsersController < ApplicationController
     redirect_to :back
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
+  end
 end

@@ -19,7 +19,7 @@
         <div class="settings_button">Settings</div>
         <div class="dropdown_container">
           <div class="dropdown" id="profile"><a href="/users/<%=session[:user_id]%>/profile" class="dropdown">Profile</a></div>
-          <div class="dropdown" id="signout"><a href="/signout" class="dropdown">Signout</a></div>
+          <div class="dropdown" id="signout"><%= link_to "Signout", signout_path %></div>
         </div>
       </div>
     </div>

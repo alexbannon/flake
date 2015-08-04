@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # TODO: validations
   has_secure_password
+  validates_uniqueness_of :email
   has_many :attendances
   has_many :events, :through => :attendances
   has_many :posts, dependent: :destroy

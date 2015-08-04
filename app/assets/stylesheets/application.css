@@ -65,8 +65,12 @@ a {
   display: flex;
   flex-direction: row;
 }
-.flash_message {
+.flash_message, .top_flash_message {
   color: red;
+}
+.top_flash_message {
+  text-align: center;
+  margin: 10px auto;
 }
 .signin_button {
   position: relative;
