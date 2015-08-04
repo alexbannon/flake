@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   skip_before_action :authorize, only: [:homepage, :create, :sign_in, :sign_in_page]
   def homepage
-    if session[:user_id]
-      redirect_to user_path(User.find(session[:user_id]))
+    if current_user
+      redirect_to user_path(@current_user)
       return
     else
       @user = User.new
@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_attendances = Attendance.where(user_id: @user.id)
+    @events = Event.all
   end
 
   def create
@@ -20,45 +22,6 @@ class UsersController < ApplicationController
     else
       render "homepage"
     end
-    # if User.find_by(username: params[:user][:username])
-    #   message = "Username already exists. Try another one."
-    # else
-    #   @user = User.create(first_name: params[:user][:first_name], last_name: params[:user][:last_name], username: params[:user][:username], email: params[:user][:email], password_digest: BCrypt::Password.create(params[:user][:password].strip))
-    #   session[:user_id] = @user.id
-    #   redirect_to user_path(@user)
-    #   return
-    # end
-    # flash[:message] = message
-    # flash[:first_name] = params[:user][:first_name]
-    # flash[:last_name] = params[:user][:last_name]
-    # flash[:email] = params[:user][:email]
-    # redirect_to :back
-  end
-
-  def signout
-    reset_session
-    redirect_to root_url
-  end
-
-  def sign_in
-    if !User.find_by(username: params[:user][:username])
-      message = "username not found."
-    else
-      @user = User.find_by(username: params[:user][:username])
-      decoded_hash = BCrypt::Password.new(@user.password_digest)
-      if decoded_hash.is_password?(params[:user][:password_digest]) == false
-        message = "Your password's wrong!"
-      else
-        session[:user_id] = @user.id
-        redirect_to :back
-        return
-      end
-    end
-    flash[:message] = message
-    redirect_to "/sign_in_page"
-  end
-
-  def sign_in_page
   end
 
   def profile
@@ -67,18 +30,21 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(session[:user_id])
-    if @user.password_digest != BCrypt::Password.new(params[:user][:password_digest])
-      message = "Your password's wrong!"
+    if @user && @user.authenticate(params[:user][:password])
+      @user.update(user_params)
+      if @user.save
+        redirect_to user_path(@user)
+      else
+        render "profile"
+      end
     else
-      @user.update()
+      flash[:message] = "Password is Invalid"
+      render "profile"
     end
-    flash[:message] = message
-    flash[:first_name] = params[:user][:first_name]
-    flash[:last_name] = params[:user][:last_name]
-    flash[:email] = params[:user][:email]
-    flash[:username] = params[:user][:username]
-    redirect_to :back
   end
+
+
+
 
   private
   def user_params

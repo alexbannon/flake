@@ -8,7 +8,7 @@
 </head>
 <body>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <% if session[:user_id] %>
+  <% if current_user %>
     <div class="top_bar">
       <a href="/" class="logo_link"><%= image_tag("flake_logo.png", class: "logo")%></a>
       <form method="get" action="/search_results" class="search_form">
@@ -18,7 +18,7 @@
       <div class="settings_container">
         <div class="settings_button">Settings</div>
         <div class="dropdown_container">
-          <div class="dropdown" id="profile"><a href="/users/<%=session[:user_id]%>/profile" class="dropdown">Profile</a></div>
+          <div class="dropdown" id="profile"><%= link_to "Profile", "/users/#{session[:user_id]}/profile"%></div>
           <div class="dropdown" id="signout"><%= link_to "Signout", signout_path %></div>
         </div>
       </div>
@@ -53,9 +53,9 @@
       <a>
         <div class="signin_button">
           <span class="signin_word">Sign In!</span>
-          <%= form_tag("/sign_in", method: "post", class: "signin") do %>
-            <input type="text" name="user[username]" placeholder="username" required/><br />
-            <input type="password" name="user[password_digest]" placeholder="password" required/><br />
+          <%= form_tag(sessions_path, class: "signin") do %>
+            <%= text_field_tag :username, params[:username], placeholder: "Username" %>
+            <%= password_field_tag(:password, "", placeholder: "Password") %>
           <% end %>
         </div>
       </a>

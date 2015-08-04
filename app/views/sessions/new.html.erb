@@ -1,4 +1,6 @@
-<h1>Log In</h1>
+<h1>This needs to be improved</h1>
+<h1 class="login_title">Log In</h1>
+<h4 class="top_flash_message"><%=flash[:signin_message]%></h4>
 <%= form_tag sessions_path do %>
   <%= label_tag :username %><br />
   <%= text_field_tag :username, params[:email] %><br />

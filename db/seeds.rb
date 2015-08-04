@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 alex = User.create(first_name: "Alex", last_name: "Bannon", username: "alexbannon", email: "alexbannon@gmail.com", password_digest: BCrypt::Password.create("alexbannon"))
-bday = alex.events.create(title: "Alex's Birthday Party!", event_content: "My awesome 26th bday party!")
+bday = Event.create(title: "Alex's Birthday Party!", event_content: "My awesome 26th bday party!")
+happy_hour = Event.create(title: "Amazing Happy Hour!", event_content: "WOOO HAPPY HOUR")
+alex_going_to_bday = Attendance.create(user: alex, event: bday)
+alex.attendances.create(event: happy_hour)
 first_post = Post.create(user_id: alex.id, event_id: bday.id, post_content: "Me at the party", image_url: "http://www.fillmurray.com/600/600")
 first_comment = first_post.comments.create(user_id: alex.id, comment_content: "WOOO")
