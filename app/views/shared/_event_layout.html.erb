@@ -1,7 +1,6 @@
-<div class="shared_background_color">
 <div class= "main_body_container">
   <div class = "left_sidebar">
-    <h4 class="main_header">Upcoming Events</h4>
+    <h4 class="main_header"><%=link_to "Upcoming Events", events_path%></h4>
     <% @events.each do |event| %>
       <div class="left_event_container">
         <div class="left_title"><%=event.title%></div>
@@ -30,5 +29,4 @@
       <p>Hello</p>
     </div>
   </div>
-</div>
 </div>

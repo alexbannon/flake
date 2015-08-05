@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: rgb(1, 102, 167);
+}
 .main_body_container {
   margin: 0 auto 0 auto;
   display: flex;
@@ -78,9 +81,12 @@
 .temp {
   width: 150px;
 }
-.shared_background_color {
-  margin: 0;
-  background-color: rgb(1, 102, 167);
+.homepage_container {
+  position: absolute;
+  background: white;
+  height: 100%;
+  width: 100%;
+  min-width: 770px;
 }
 .main_header {
   margin: 30px auto 0 auto;
