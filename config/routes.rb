@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get 'users'
       get 'join'
+      get 'leave'
     end
     resources :posts do
       resources :comments

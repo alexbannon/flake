@@ -42,6 +42,15 @@ class EventsController < ApplicationController
     return
   end
 
+  def leave
+    @event = Event.find(params[:id])
+    @user = User.find(session[:user_id])
+    Attendance.where(user: @user, event: @event).destroy_all
+    redirect_to root_url
+    return
+  end
+
+
   private
   def event_params
     params.require(:event).permit(:title, :event_content, :event_image_url, :event_time)
