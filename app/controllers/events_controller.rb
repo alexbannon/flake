@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @event = Event.new(event_params)
     if @event.save
       puts "yay!"
@@ -20,6 +20,21 @@ class EventsController < ApplicationController
     else
       puts "oh noes"
       puts @event
+    end
+  end
+
+  def edit
+    @user = User.find(session[:user_id])
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      redirect_to :back
     end
   end
 
