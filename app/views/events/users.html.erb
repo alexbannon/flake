@@ -3,8 +3,9 @@
   <div class = "main_layout">
     <h4 class="main_header"><%=@event.title%></h4>
     <div class="event_container">
-      <h4 class="event_time"><%=@event.event_time.strftime("%A, %B %e at %l:%M%p")%></h4>
-      <h4 class="event_content"><%=@event.event_content%></h4>
+      <% @users.each do |user| %>
+        <p><%= user.first_name%> <%=user.last_name%></p>
+      <% end %>
     </div>
   </div>
   <div class = "right_sidebar">

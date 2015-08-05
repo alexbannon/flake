@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :events
   end
   resources :events do
+    member do
+      get 'users'
+    end
     resources :posts do
       resources :comments
     end

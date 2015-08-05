@@ -28,6 +28,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def users
+    @user = User.find(session[:user_id])
+    @event = Event.find(params[:id])
+    @users = @event.users
+  end
 
   private
   def event_params
