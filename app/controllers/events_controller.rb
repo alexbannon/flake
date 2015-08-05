@@ -66,6 +66,11 @@ class EventsController < ApplicationController
     return
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to root_url
+  end
 
   private
   def event_params

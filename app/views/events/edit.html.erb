@@ -1,4 +1,4 @@
-<div class="new_event_container">
+<div class="event_container">
   <%= form_for [@user, @event] do |f| %>
   <% if @event.errors.any? %>
     <h4 class="flash_message">Form is invalid</h4>
@@ -28,5 +28,7 @@
     <%= f.submit %>
   </div>
   <% end %>
-
+  <%= form_for [@user, @event], method: :delete do |f| %>
+    <%= f.submit "Delete!" %>
+  <% end %>
 </div>

@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    reset_session
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
@@ -16,8 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    # OR reset_session
+    reset_session
     redirect_to root_url
   end
 end
