@@ -4,7 +4,7 @@
     <% if @event.attendances.find_by user_id: @user.id %>
       <p>You're a Member</p>
     <% else %>
-      <p></p>
+      <p><%= link_to "Join Event", join_event_path(@event)%></p>
     <% end %>
     <%= image_tag(@event.event_image_url, class: "left_event_image") %>
     <p>Members: <%= @event.users.length %></p>

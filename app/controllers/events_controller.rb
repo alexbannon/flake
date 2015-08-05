@@ -34,6 +34,14 @@ class EventsController < ApplicationController
     @users = @event.users
   end
 
+  def join
+    @event = Event.find(params[:id])
+    @user = User.find(session[:user_id])
+    @event.attendances.create(user: @user)
+    redirect_to :back
+    return
+  end
+
   private
   def event_params
     params.require(:event).permit(:title, :event_content, :event_image_url, :event_time)

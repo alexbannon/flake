@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get 'users'
+      get 'join'
     end
     resources :posts do
       resources :comments
