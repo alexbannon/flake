@@ -1,0 +1,19 @@
+<div class = "right_sidebar">
+  <h4 class="main_header">Event Details</h4>
+  <div class="right_container">
+    <% if @event.attendances.find_by user_id: @user.id %>
+      <p>You're a Member</p>
+    <% else %>
+      <p></p>
+    <% end %>
+    <%= image_tag(@event.event_image_url, class: "left_event_image") %>
+    <p>Members: <%= @event.users.length %></p>
+    <% @event.users.limit(5).each do |user| %>
+      <p><%= user.username %></p>
+    <% end %>
+    <p><%= link_to "Show All", users_event_path(@event)%></p>
+  </div>
+  <div class="right_container">
+    <p>Edit Event</p>
+  </div>
+</div>
