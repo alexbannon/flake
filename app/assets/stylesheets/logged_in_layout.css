@@ -69,14 +69,25 @@ body {
 }
 #delete_button_container {
   text-align: center;
+  display: block;
 }
 #delete_form_container {
   text-align: center;
   margin: 10px auto;
+  display: none;
 }
 .delete_user {
   background-color: red;
   border-radius: 10px;
+}
+#cancel_container {
+  margin: 5px auto;
+}
+#cancel_delete {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 2px 10px 2px 10px;
 }
 .temp {
   width: 150px;

@@ -28,7 +28,8 @@ $(document).ready(function() {
   $(".settings_button").on("click", function() {
     $(".dropdown_container").toggle("slow");
   })
-  $(".delete_user").on("click", function() {
-    $(".delete_user_verification").toggle();
+  $("#delete_button_container").on("click", function() {
+    $("#delete_form_container").toggle();
+    $("#delete_button_container").toggle();
   })
 });
