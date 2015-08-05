@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_attendances = Attendance.where(user_id: @user.id)
-    @events = Event.all
+    @events = Event.all.order("event_time")
   end
 
   def create

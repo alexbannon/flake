@@ -1,1 +1,32 @@
-hello world
+<div class= "main_body_container">
+  <div class = "left_sidebar">
+    <h4 class="main_header"><%=link_to "Your Events", user_path(session[:user_id])%></h4>
+    <% @user.events.each do |event| %>
+      <div class="left_event_container">
+        <div class="left_title"><%=event.title%></div>
+        <%= image_tag(event.event_image_url, class: "left_event_image") %>
+      </div>
+    <% end %>
+  </div>
+  <div class = "main_layout">
+    <h4 class="main_header">Upcoming Events</h4>
+    <% @events.each do |event| %>
+    <div class="event_container">
+      <h2 class="event_title"><%= event.title %></h2>
+      <h4 class="event_content"><%= event.event_content %></h4>
+      <h4 class="event_time"><%= event.event_time.strftime("%b %e, %Y at %l:%M %p") %></h4>
+      <%= image_tag(event.event_image_url, class: "event_image") %>
+    </div>
+    <% end %>
+  </div>
+  <div class = "right_sidebar">
+    <h4 class="main_header">Right Sidebar</h4>
+    <div class="right_container">
+      <p class="temp">Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
   </div>
   <div class = "main_layout">
     <h4 class="main_header"><%=@user.first_name%> <%=@user.last_name%>'s Events</h4>
-    <% @user.events.each do |event| %>
+    <% @user.events.order("event_time").each do |event| %>
     <div class="event_container">
       <h2 class="event_title"><%= event.title %></h2>
       <h4 class="event_content"><%= event.event_content %></h4>
