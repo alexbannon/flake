@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .main_body_container {
-  margin: 30px auto 0 auto;
+  margin: 0 auto 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -77,4 +77,11 @@
 }
 .temp {
   width: 150px;
+}
+.shared_background_color {
+  margin: 0;
+  background-color: rgb(1, 102, 167);
+}
+.main_header {
+  margin: 30px auto 0 auto;
 }
