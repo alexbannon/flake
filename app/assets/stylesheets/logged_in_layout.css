@@ -3,6 +3,7 @@
 }
 body {
   background-color: rgb(219, 236, 246);
+  font-family: 'Kreon', serif;
 }
 .main_body_container {
   margin: 0 auto 0 auto;
@@ -101,9 +102,15 @@ body {
 }
 .main_header {
   margin: 30px auto 0 auto;
+  font-size: 1.8em;
 }
 .left_header {
-  margin: 30px auto 0 auto;
+  margin: 34px auto 0 auto;
+  font-size: 1.2em;
+}
+.right_header {
+  margin: 34px auto 18px auto;
+  font-size: 1.2em;
 }
 .left_header:hover {
   text-decoration: underline;

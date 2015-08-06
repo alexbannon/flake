@@ -1,5 +1,5 @@
 <div class = "right_sidebar">
-  <h4 class="main_header">Event Details</h4>
+  <h4 class="right_header">Event Details</h4>
   <div class="right_container">
     <% if @event.attendances.find_by user_id: @user.id %>
       <p><%= link_to "Leave Event", leave_event_path(@event)%></p>
