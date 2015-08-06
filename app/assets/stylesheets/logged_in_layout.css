@@ -145,5 +145,22 @@ body {
 .event_form_title * {
   text-align: center;
   font-size: 1.5em;
-  size: auto;
+  width: auto;
+  font-family: 'Cagliostro', sans-serif;
+}
+#event_event_content {
+  text-align: center;
+  font-family: 'Cagliostro', sans-serif;
+}
+.edit_event, .new_event {
+  text-align: center;
+}
+.form_event_image {
+  width: 100px;
+}
+.search_bar {
+  font-size: 1em;
+}
+.event_margins {
+  margin: 5px auto 5px auto;
 }

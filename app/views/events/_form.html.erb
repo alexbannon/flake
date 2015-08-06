@@ -11,16 +11,21 @@
   <%= f.text_field :title, :required => true, :maxlength => 30, :size => 30, :placeholder => "Title" %>
 </div>
 <div class="event_container">
-  <div class="event_form_content">
-    <%= f.text_field :event_content, :required => true, :placeholder => "Description" %>
+  <div class="event_margins">
+    <%= f.text_field :event_content, :required => true, :placeholder => "Description", :maxlength => 180, :size => 90 %>
   </div>
   <div class="event_form_image">
+    <% if !@event.event_image_url.nil? %>
+      <div>
+        <%= image_tag(@event.event_image_url, class: "form_event_image") %>
+      </div>
+    <% end %>
     <%= f.text_field :event_image_url, :required => true, :placeholder => "Image URL" %>
   </div>
-  <div class="event_form_time">
+  <div class="event_margins">
     <%= f.datetime_select :event_time, :order => [:month, :day, :year, :hour, :minute], :required => true %>
   </div>
-  <div class="event_form_submit"%>
+  <div class="event_margins"%>
     <%= f.submit %>
   </div>
 </div>
