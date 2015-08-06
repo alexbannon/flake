@@ -1,0 +1,25 @@
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
+  <h4 class="flash_message">Form is invalid</h4>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+  <%= f.label :first_name %>:<br .>
+  <%= f.text_field :first_name, :required => true %><br />
+  <%= f.label :last_name %>:<br .>
+  <%= f.text_field :last_name, :required => true %><br />
+  <%= f.label :email %>:<br .>
+  <%= f.email_field :email, :required => true %><br />
+  <%= f.label :username %>:<br .>
+  <%= f.text_field :username, :required => true %><br />
+  <%= f.label :password %>:<br .>
+  <%= f.password_field :password, :required => true %><br />
+  <% if @user.id.nil? %>
+    <%= f.label :password_confirmation %>:<br .>
+    <%= f.password_field :password_confirmation, :required => true %><br />
+  <% end%>
+  <%= f.submit %>
+<% end %>
