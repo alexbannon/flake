@@ -42,6 +42,7 @@ class EventsController < ApplicationController
     @user = User.find(session[:user_id])
     @event = Event.find(params[:id])
     @post = Post.new
+    @comment = Comment.new
   end
 
   def users

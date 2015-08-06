@@ -41,12 +41,16 @@ body {
   margin: 10px auto 10px auto;
   border-radius: 5px;
   max-width: 200px;
-
 }
-
 .event_container {
-  margin: 10px auto 10px auto;
+  margin: 10px auto 0 auto;
   background-color: rgb(115, 183, 217);
+  border-radius: 5px;
+  max-width: 550px;
+}
+.comment_container {
+  margin: 0 auto 10px auto;
+  background-color: rgb(233, 234, 237);
   border-radius: 5px;
   max-width: 550px;
 }
@@ -59,7 +63,6 @@ body {
 .event_title, .event_content, .event_time {
   font-family: 'Cagliostro', sans-serif;
 }
-
 #delete_button {
   text-align: center;
   border: 1px solid black;
@@ -104,4 +107,19 @@ body {
   width: 100%;
   height: 80px;
   border-radius: 5px;
+}
+.comment_form {
+  display: inline-block;
+  width: 100%;
+}
+.comment_field {
+  width: 100%;
+  height: 25px;
+}
+.each_comment {
+  padding: 5px 0 5px 0;
+  text-align: left;
+}
+.delete_comment_button {
+  display: inline;
 }

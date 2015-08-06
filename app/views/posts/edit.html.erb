@@ -1,0 +1,20 @@
+<div class= "main_body_container">
+  <%= render "shared/your_other_events_sidebar" %>
+  <div class = "main_layout">
+    <div class="event_container">
+      <%= form_for [@event, @post] do |f| %>
+        <div class="post_content">
+          <%= f.text_area :post_content, :required => true, :placeholder => "Write Something...", :class => "post_textarea" %>
+        </div>
+        <div class="post_image_and_submit">
+          <%= f.text_field :image_url, :placeholder => "Attach Image URL" %>
+          <%= f.submit %>
+        </div>
+      <% end %>
+      <%= form_for [@event, @post], method: :delete do |f| %>
+        <%= f.submit "delete" %>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/event_details_sidebar" %>
+</div>

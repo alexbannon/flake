@@ -30,7 +30,26 @@
             <h1><%=post.post_content%></h1>
             <%= image_tag(post.image_url, class: "event_image") %>
           <% end %>
-          <h4><span><%=User.find(post.user_id).username%>: </span><span> <%=post.created_at.strftime("%b %e, %l:%M%p")%></span></h4>
+          <h4>
+            <% if post.user_id.to_i == @user.id %>
+              <span><%= link_to "(edit)", edit_event_post_path(@event, post)%></span>
+            <% end %>
+            <span><%=User.find(post.user_id).username%>: </span><span> <%=post.created_at.strftime("%b %e, %l:%M%p")%></span></h4>
+        </div>
+        <div class="comment_container">
+          <%= form_for [@event, post, @comment], :html => {:class => "comment_form"} do |f| %>
+            <%= f.text_field :comment_content, :required => true, :placeholder => "Write a comment...", :class => "comment_field" %>
+            <%= f.submit :style => "display: none;" %>
+          <% end %>
+          <% post.comments.each do |comment| %>
+            <div class="each_comment">
+              <% if comment.user.id.to_i == session[:user_id].to_i %>
+                <span><%= button_to "(-) ", event_post_comment_path(@event, post, comment), { method: "delete", form_class: "delete_comment_button" }%></span>
+              <% end %>
+              <%= comment.user.username %>:
+              <%= comment.comment_content %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>
