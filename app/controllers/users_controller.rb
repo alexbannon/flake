@@ -26,11 +26,11 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.find(session[:user_id])
+    user_helper
   end
 
   def update
-    @user = User.find(session[:user_id])
+    user_helper
     if @user && @user.authenticate(params[:user][:password])
       @user.update(user_params)
       if @user.save
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(session[:user_id])
+    user_helper
     if @user && @user.authenticate(params[:password])
       @user.destroy
       reset_session

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all.order("event_time").limit(8)
-    @user = User.find(session[:user_id])
+    user_helper
   end
 
   def new
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
+    user_helper
     @event = Event.new(event_params)
     if @event.save
       puts "yay!"
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user_id])
+    user_helper
     @event = Event.find(params[:id])
   end
 
@@ -39,21 +39,21 @@ class EventsController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    user_helper
     @event = Event.find(params[:id])
     @post = Post.new
     @comment = Comment.new
   end
 
   def users
-    @user = User.find(session[:user_id])
+    user_helper
     @event = Event.find(params[:id])
     @users = @event.users
   end
 
   def join
     @event = Event.find(params[:id])
-    @user = User.find(session[:user_id])
+    user_helper
     @event.attendances.create(user: @user)
     redirect_to :back
     return
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
 
   def leave
     @event = Event.find(params[:id])
-    @user = User.find(session[:user_id])
+    user_helper
     Attendance.where(user: @user, event: @event).destroy_all
     redirect_to root_url
     return
