@@ -8,22 +8,20 @@
   </ul>
 <% end %>
 <div class="event_form_title">
-  <%= f.label :title %>
-  <%= f.text_field :title, :required => true %>
+  <%= f.text_field :title, :required => true, :maxlength => 30, :size => 30, :placeholder => "Title" %>
 </div>
-<div class="event_form_content">
-  <%= f.label :event_content, "Description"%>
-  <%= f.text_field :event_content, :required => true %>
-</div>
-<div class="event_form_image">
-  <%= f.label :event_image_url, "Image URL" %>
-  <%= f.text_field :event_image_url, :required => true %>
-</div>
-<div class="event_form_time">
-  <%= f.label :event_time, "Event Time" %>
-  <%= f.datetime_select :event_time, :order => [:month, :day, :year, :hour, :minute], :required => true %>
-</div>
-<div class="event_form_submit"%>
-  <%= f.submit %>
+<div class="event_container">
+  <div class="event_form_content">
+    <%= f.text_field :event_content, :required => true, :placeholder => "Description" %>
+  </div>
+  <div class="event_form_image">
+    <%= f.text_field :event_image_url, :required => true, :placeholder => "Image URL" %>
+  </div>
+  <div class="event_form_time">
+    <%= f.datetime_select :event_time, :order => [:month, :day, :year, :hour, :minute], :required => true %>
+  </div>
+  <div class="event_form_submit"%>
+    <%= f.submit %>
+  </div>
 </div>
 <% end %>

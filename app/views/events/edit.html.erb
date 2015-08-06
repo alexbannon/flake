@@ -1,6 +1,4 @@
-<div class="event_container">
-  <%= render "form" %>
-  <%= form_for [@user, @event], method: :delete do |f| %>
-    <%= f.submit "Delete!" %>
-  <% end %>
-</div>
+<%= render "form" %>
+<%= form_for [@user, @event], method: :delete do |f| %>
+  <%= f.submit "Delete!" %>
+<% end %>

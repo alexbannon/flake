@@ -138,3 +138,12 @@ body {
 .results a:hover {
   background-color: rgb(179, 188, 196);
 }
+.event_form_title {
+  text-align: center;
+  margin: 10px auto 0 auto;
+}
+.event_form_title * {
+  text-align: center;
+  font-size: 1.5em;
+  size: auto;
+}
