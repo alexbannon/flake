@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: "users#homepage"
+  get "search_results" => "searches#user_search"
   get "signout" => "sessions#destroy"
   get "users/:user_id/profile" => "users#profile"
+  put "users/:user_id/changepw" => "users#changepw"
   resources :sessions
   resources :users do
     resources :events

@@ -56,7 +56,21 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def changepw
+    user_helper
+    if @user && @user.authenticate(params[:old_password])
+      if params[:password] == params[:password_confirmation]
+        @user.update(password_digest: BCrypt::Password.create(params[:password_confirmation]))
+        redirect_to user_path(@user)
+      else
+        flash[:message] = "Passwords don't match"
+        redirect_to :back
+      end
+    else
+      flash[:message] = "Old password not correct"
+      redirect_to :back
+    end
+  end
 
   private
   def user_params

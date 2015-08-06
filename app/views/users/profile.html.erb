@@ -1,14 +1,25 @@
-<h4 class="flash_message"><%=flash[:message]%></h4>
-<%= render "form" %>
-<div id="delete_button_container">
-  <span id = "delete_button">Delete!</span>
-</div>
-<div id="delete_form_container">
-  <%= form_tag(user_path(@user), method: "delete") do %>
-    <%= password_field_tag(:password, "", placeholder: "Password") %>
-    <%= submit_tag("Delete!", class: "delete_user") %>
-  <% end %>
-  <div id="cancel_container">
-    <span id="cancel_delete"><%=link_to "Cancel", root_url%></span>
+<div class="event_container">
+  <h4 class="flash_message"><%=flash[:message]%></h4>
+  <%= render "form" %>
+  <div id="delete_button_container">
+    <span id = "delete_button">Delete!</span>
+  </div>
+  <div id="delete_form_container">
+    <%= form_tag(user_path(@user), method: "delete") do %>
+      <%= password_field_tag(:password, "", placeholder: "Password") %>
+      <%= submit_tag("Delete!", class: "delete_user") %>
+    <% end %>
+    <div id="cancel_container">
+      <span id="cancel_delete"><%=link_to "Cancel", root_url%></span>
+    </div>
+  </div>
+  <div id = "change_container">
+    <span id = >Change Password</span>
+    <%= form_tag("/users/#{@user.id}/changepw", method: "put") do %>
+      <%= password_field_tag(:old_password, "", placeholder: "Old Password") %>
+      <%= password_field_tag(:password, "", placeholder: "New Password") %>
+      <%= password_field_tag(:password_confirmation, "", placeholder: "Confirm Password") %>
+      <%= submit_tag("Change PW!", class: "change_pw_submit") %>
+    <% end %>
   </div>
 </div>

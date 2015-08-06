@@ -44,13 +44,13 @@ body {
 }
 .event_container {
   margin: 10px auto 0 auto;
-  background-color: rgb(115, 183, 217);
+  background-color: rgb(235, 235, 235);
   border-radius: 5px;
   max-width: 550px;
 }
 .comment_container {
   margin: 0 auto 10px auto;
-  background-color: rgb(233, 234, 237);
+  background-color: rgb(219, 220, 225);
   border-radius: 5px;
   max-width: 550px;
 }
