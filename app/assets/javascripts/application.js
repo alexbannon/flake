@@ -16,10 +16,6 @@
 //= require_tree .
 
 $(document).ready(function() {
-  function set_time_zone_offset() {
-      var current_time = new Date();
-      $.cookie('time_zone', current_time.getTimezoneOffset());
-  }
   $(".signin_word").on("click", function(event) {
     event.preventDefault();
     $(".signin").toggle("slow");
