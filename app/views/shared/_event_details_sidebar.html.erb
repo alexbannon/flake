@@ -2,18 +2,18 @@
   <h4 class="right_header">Event Details</h4>
   <div class="right_container">
     <% if @event.attendances.find_by user_id: @user.id %>
-      <p><%= link_to "Leave Event", leave_event_path(@event)%></p>
+      <p class="event_member"><%= link_to "Leave Event", leave_event_path(@event)%></p>
     <% else %>
       <p><%= link_to "Join Event", join_event_path(@event)%></p>
     <% end %>
     <%= image_tag(@event.event_image_url, class: "left_event_image") %>
     <p>Members: <%= @event.users.length %></p>
     <% @event.users.limit(5).each do |user| %>
-      <p><%= user.username %></p>
+      <p class="event_member"><%=link_to user.username, user_path(user)%></p>
     <% end %>
-    <p><%= link_to "Show All", users_event_path(@event)%></p>
+    <p class="event_member"><%= link_to "Show All", users_event_path(@event)%></p>
   </div>
   <div class="right_container">
-    <p><%=link_to "Edit Event", edit_user_event_path(@user, @event)%></p>
+    <p class ="event_member"><%=link_to "Edit Event", edit_user_event_path(@user, @event)%></p>
   </div>
 </div>

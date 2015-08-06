@@ -1,10 +1,10 @@
 <div class= "main_body_container">
   <%= render "shared/your_other_events_sidebar" %>
   <div class = "main_layout">
-    <h4 class="main_header"><%= link_to @event.title, event_path(@event)%></h4>
+    <h4 class="event_member_show_header"><%= link_to @event.title, event_path(@event)%></h4>
     <div class="event_container">
       <% @users.each do |user| %>
-        <p><%= user.first_name%> <%=user.last_name%></p>
+        <p class="event_member_show"><%=link_to "#{user.first_name} #{user.last_name}", user_path(user)%></p>
       <% end %>
     </div>
   </div>

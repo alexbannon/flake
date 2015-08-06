@@ -171,3 +171,16 @@ body {
 .event_margins {
   margin: 5px auto 5px auto;
 }
+.event_member:hover {
+  background-color: rgb(179, 188, 196);
+}
+.event_member_show a:hover {
+  background-color: rgb(179, 188, 196);
+}
+.event_member_show_header {
+  margin: 30px auto 0 auto;
+  font-size: 1.8em;
+}
+.event_member_show_header a:hover {
+  background-color: rgb(209, 218, 226);
+}
