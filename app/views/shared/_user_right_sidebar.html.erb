@@ -1,7 +1,17 @@
 <div class = "right_sidebar">
   <h4 class="right_header">Friends</h4>
   <div class="right_container">
-    <p>Friends</p>
+    <% if params[:id].to_i == @current_user.id %>
+      <% if @current_user.friends.empty? %>
+        <p>You don't have any friends yet! Find some friends and add them here!</p>
+      <% else %>
+        <% @current_user.friends.each do |friend| %>
+          <p><%= friend.username %></p>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%=link_to "Friend #{@user.username}", friendships_path(:friend_id => params[:id]), :method => :post %>
+    <%end%>
   </div>
 </div>
 </div>

@@ -18,4 +18,5 @@ Rails.application.routes.draw do
       resources :comments
     end
   end
+  resources :friendships
 end

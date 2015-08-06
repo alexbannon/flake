@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @current_user = User.find(session[:user_id])
     @user = User.find(params[:id])
     @user_attendances = Attendance.where(user_id: @user.id)
     @events = Event.all.order("event_time")
