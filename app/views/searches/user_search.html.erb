@@ -1,0 +1,34 @@
+<div class= "main_body_container">
+  <div class = "left_sidebar">
+    <h4 class="main_header"><%=link_to "Upcoming Events", events_path%></h4>
+    <% @events.limit(5).each do |event| %>
+      <div class="left_event_container">
+        <div class="left_title"><%= link_to event.title, event_path(event)%></div>
+        <%= image_tag(event.event_image_url, class: "left_event_image") %>
+      </div>
+    <% end %>
+  </div>
+  <div class = "main_layout">
+    <h4 class="main_header">Search Results</h4>
+    <div class="event_container">
+      <% if @search_events.empty? && @search_users.empty? && @search_first_last_user.empty? %>
+        <h4 class="main_header">No Results! Try Broadening Your Search!</h4>
+      <% else %>
+        <h4 class="main_header">Event Results</h4>
+        <% @search_events.each do |event| %>
+          <p><%=event.title%></p>
+        <% end %>
+        <h4 class="main_header">User Results</h4>
+        <% @search_users.each do |user| %>
+          <p><%=user.username %></p>
+        <% end %>
+        <% if !@search_first_last_user.nil? %>
+          <% @search_first_last_user.each do |user| %>
+            <p><%=user.username %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/user_right_sidebar" %>
+</div>
