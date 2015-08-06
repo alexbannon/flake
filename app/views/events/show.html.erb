@@ -22,7 +22,7 @@
         <h1>No Posts Yet. Create One!</h1>
       </div>
     <% else %>
-      <% @event.posts.each do |post| %>
+      <% @event.posts.order("created_at").each do |post| %>
         <div class="event_container">
           <% if post.image_url.empty? %>
             <h4><%=post.post_content%></h4>

@@ -4,6 +4,7 @@
     <% @events.limit(5).each do |event| %>
       <div class="left_event_container">
         <div class="left_title"><%= link_to event.title, event_path(event)%></div>
+        <div class="left_date"><%= event.event_time.strftime("%m/%e at %l:%M%p")%></div>
         <%= link_to(image_tag(event.event_image_url, class: "left_event_image"), event_path(event)) %>
       </div>
     <% end %>
