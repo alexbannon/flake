@@ -1,6 +1,6 @@
 <div class= "main_body_container">
   <div class = "left_sidebar">
-    <h4 class="main_header"><%=link_to "Your Events", user_path(session[:user_id])%></h4>
+    <h4 class="left_header"><%=link_to "Your Events", user_path(session[:user_id])%></h4>
     <% @user.events.each do |event| %>
       <div class="left_event_container">
         <div class="left_title"><%= link_to event.title, event_path(event)%></div>

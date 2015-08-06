@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(1, 102, 167);
+  background-color: rgb(219, 236, 246);
 }
 .main_body_container {
   margin: 0 auto 0 auto;
@@ -37,25 +37,25 @@ body {
   border-radius: 5px;
 }
 .left_event_container {
-  background-color: rgb(65, 133, 167);
+  background-color: rgb(219, 236, 246);
   margin: 10px auto 10px auto;
   border-radius: 5px;
   max-width: 200px;
 }
 .event_container {
   margin: 10px auto 0 auto;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(209, 218, 226);
   border-radius: 5px;
   max-width: 550px;
 }
 .comment_container {
   margin: 0 auto 10px auto;
-  background-color: rgb(219, 220, 225);
+  background-color: rgb(179, 187, 196);
   border-radius: 5px;
   max-width: 550px;
 }
 .right_container {
-  background-color: rgb(65, 133, 167);
+  background-color: rgb(209, 218, 226);
   margin: 10px auto 10px auto;
   border-radius: 5px;
   max-width: 200px;
@@ -102,6 +102,12 @@ body {
 .main_header {
   margin: 30px auto 0 auto;
 }
+.left_header {
+  margin: 30px auto 0 auto;
+}
+.left_header:hover {
+  text-decoration: underline;
+}
 .post_textarea {
   resize: none;
   width: 100%;
@@ -122,4 +128,10 @@ body {
 }
 .delete_comment_button {
   display: inline;
+}
+.left_title a:hover {
+  background-color: rgb(209, 218, 226);
+}
+.event_title a:hover {
+  text-decoration: underline;
 }

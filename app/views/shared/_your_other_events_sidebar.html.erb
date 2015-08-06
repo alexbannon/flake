@@ -1,5 +1,5 @@
 <div class = "left_sidebar">
-  <h4 class="main_header"><%=link_to "Your Other Events", user_path(session[:user_id])%></h4>
+  <h4 class="left_header"><%=link_to "Your Other Events", user_path(session[:user_id])%></h4>
   <% @user.events.limit(5).each do |event| %>
     <% next if event.id.to_i == params[:id].to_i %>
     <div class="left_event_container">

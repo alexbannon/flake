@@ -1,6 +1,6 @@
 <div class= "main_body_container">
   <div class = "left_sidebar">
-    <h4 class="main_header"><%=link_to "Upcoming Events", events_path%></h4>
+    <h4 class="left_header"><%=link_to "Upcoming Events", events_path%></h4>
     <% @events.limit(5).each do |event| %>
       <div class="left_event_container">
         <div class="left_title"><%= link_to event.title, event_path(event)%></div>
