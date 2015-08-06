@@ -14,12 +14,8 @@ class EventsController < ApplicationController
     user_helper
     @event = Event.new(event_params)
     if @event.save
-      puts "yay!"
       @user.attendances.create(event: @event)
       redirect_to root_url
-    else
-      puts "oh noes"
-      puts @event
     end
   end
 
