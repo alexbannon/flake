@@ -16,15 +16,15 @@
       <% else %>
         <h4 class="main_header">Event Results</h4>
         <% @search_events.each do |event| %>
-          <p><%=event.title%></p>
+          <p class="results"><%=link_to(event.title, event_path(event))%></p>
         <% end %>
         <h4 class="main_header">User Results</h4>
         <% @search_users.each do |user| %>
-          <p><%=user.username %></p>
+          <p class="results"><%=link_to(user.username, user_path(user))%></p>
         <% end %>
         <% if !@search_first_last_user.nil? %>
           <% @search_first_last_user.each do |user| %>
-            <p><%=user.username %></p>
+            <p class="results"><%=link_to(user.username, user_path(user))%></p>
           <% end %>
         <% end %>
       <% end %>

@@ -129,9 +129,12 @@ body {
 .delete_comment_button {
   display: inline;
 }
-.left_title a:hover {
+.left_title:hover {
   background-color: rgb(209, 218, 226);
 }
 .event_title a:hover {
   text-decoration: underline;
+}
+.results a:hover {
+  background-color: rgb(179, 188, 196);
 }
