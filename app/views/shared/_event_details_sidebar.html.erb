@@ -2,7 +2,7 @@
   <h4 class="right_header">Event Details</h4>
   <div class="right_container">
     <% if @event.attendances.find_by user_id: @user.id %>
-      <p class="event_member"><%= link_to "Leave Event", leave_event_path(@event)%></p>
+      <p class="leave_event"><%= link_to "Leave Event", leave_event_path(@event)%></p>
     <% else %>
       <p class="event_member"><%= link_to "Join Event", join_event_path(@event)%></p>
     <% end %>

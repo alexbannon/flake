@@ -184,3 +184,12 @@ body {
 .event_member_show_header a:hover {
   background-color: rgb(209, 218, 226);
 }
+.unfriend a{
+  color: red;
+}
+.leave_event:hover {
+  background-color: rgb(179, 188, 196);
+}
+.leave_event a{
+  color: red;
+}

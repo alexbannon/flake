@@ -12,7 +12,7 @@
     <% else %>
       <% if @current_user.friendships.find_by(friend_id: @user.id) %>
         <p>You're friends with <%=@user.first_name%>!</p>
-        <%=link_to "Unfriend?", friendship_path(@user), :method => :delete%>
+        <p class="unfriend"><%=link_to "Unfriend?", friendship_path(@user), :method => :delete%></p>
       <% else %>
         <%=link_to "Friend #{@user.username}", friendships_path(:friend_id => params[:id]), :method => :post %>
       <% end %>
