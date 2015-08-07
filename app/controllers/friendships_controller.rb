@@ -13,7 +13,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     user_helper
-    @friendship = @user.friendships.find(:friend_id => params[:id])
+    @friendship = @user.friendships.find_by(:friend_id => params[:id])
     @friendship.destroy
     flash[:message] = "Successfully destroyed friendship"
     redirect_to root_url

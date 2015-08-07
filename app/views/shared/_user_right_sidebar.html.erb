@@ -6,7 +6,7 @@
         <p>You don't have any friends yet! Find some friends and add them here!</p>
       <% else %>
         <% @current_user.friends.each do |friend| %>
-          <p><%= friend.username %></p>
+          <p class="event_member"><%= link_to friend.username, user_path(friend) %></p>
         <% end %>
       <% end %>
     <% else %>
