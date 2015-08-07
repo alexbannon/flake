@@ -193,3 +193,11 @@ body {
 .leave_event a{
   color: red;
 }
+#change_container {
+  text-align: center;
+  margin: 15px auto;
+}
+.text_comment {
+  font-size: 0.75em;
+  color: rgb(70, 70, 70)
+}

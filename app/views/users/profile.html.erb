@@ -16,10 +16,18 @@
   <div id = "change_container">
     <span id = >Change Password</span>
     <%= form_tag("/users/#{@user.id}/changepw", method: "put") do %>
-      <%= password_field_tag(:old_password, "", placeholder: "Old Password") %>
-      <%= password_field_tag(:password, "", placeholder: "New Password") %>
-      <%= password_field_tag(:password_confirmation, "", placeholder: "Confirm Password") %>
-      <%= submit_tag("Change PW!", class: "change_pw_submit") %>
+      <div>
+        <%= password_field_tag(:old_password, "", placeholder: "Old Password") %>
+      </div>
+      <div>
+        <%= password_field_tag(:password, "", placeholder: "New Password") %>
+      </div>
+      <div>
+        <%= password_field_tag(:password_confirmation, "", placeholder: "Confirm Password") %>
+      </div>
+      <div>
+        <%= submit_tag("Change PW!", class: "change_pw_submit") %>
+      </div>
     <% end %>
   </div>
 </div>
