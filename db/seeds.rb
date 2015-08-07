@@ -41,8 +41,16 @@ chris = User.create(first_name: "Chris", last_name: "Gordon", username: "chrisgo
 john.attendances.create(event: school_afterparty)
 john.posts.create(event: school_afterparty, post_content: "Looking forward to funemployment", image_url: "http://33.media.tumblr.com/184c0d79d7d1cc25bd3824d2a65c718e/tumblr_mw49pt4SHf1qbtwyto1_r2_250.gif")
 abby.attendances.create(event: school_afterparty)
-abby.posts.create(event: school_afterparty, post_content: "OMG I am going to drink so much I forget all 12 weeks of school")
+abby.posts.create(event: school_afterparty, post_content: "OMG I am going to drink so much I forget all 12 weeks of school", image_url: "")
 ali.attendances.create(event: school_afterparty)
+ali.posts.create(event: school_afterparty, post_content: "Shots Shots Shots", image_url: "http://media.giphy.com/media/MhenSeT9i5Mnm/giphy.gif")
 dan.attendances.create(event: school_afterparty)
-
+dan.posts.create(event: school_afterparty, post_content: "Me the next day", image_url: "http://fluffy-kitten.com/wp-content/uploads/2014/05/sleepy-kittens.jpg")
 chris.attendances.create(event: school_afterparty)
+
+testuser.attendances.create(event: movies)
+chris.attendances.create(event: movies)
+dan.attendances.create(event: movies)
+
+erica.posts.create(event: movies, post_content: "I've heard really good things about this movie, guys! I'm really excited! Let's go early so we get good seats!", image_url: "")
+dan.posts.create(event: movies, post_content: "I'm basically this excited", image_url: "http://tonyortega.org/wp-content/uploads/2014/05/CouchJump.jpg")
