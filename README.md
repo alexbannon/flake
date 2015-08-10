@@ -7,7 +7,6 @@ View on heroku: http://alexbannon-flake.herokuapp.com/
 
 Watch a brief runthrough video: https://www.youtube.com/watch?v=7Or0N7yewAA
 
-# Wireframe and ERD
+# Wireframe, UserStories, and ERD:
 
-- https://github.com/alexbannon/flake/blob/master/IMG_0717.JPG
-- https://github.com/alexbannon/flake/blob/master/IMG_0720.JPG
+https://github.com/alexbannon/flake/tree/master/Planning
