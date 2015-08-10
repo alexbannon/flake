@@ -1,20 +1,21 @@
 <div class="homepage_container">
-<h4 class = "top_flash_message"><%=flash[:message]%></h4>
-<div class="flex_homepage">
-  <div class="left_column_homepage">
-    <h1>Welcome to Flake!</h1>
-    <div>The world's number 15 social media platform!</div>
-    <div>
-      <span>Here you will be able to...</span>
-      <ul>
-        <li>Add friends</li>
-        <li>Create Events</li>
-        <li>Add photos and posts</li>
-      </ul>
+  <h4 class = "top_flash_message"><%=flash[:message]%></h4>
+  <div class="flex_homepage">
+    <div class="left_column_homepage">
+      <h1>Welcome to Flake!</h1>
+      <div>The world's number 15 social media platform!</div>
+      <div>
+        <span>Here you will be able to...</span>
+        <ul>
+          <li>Add friends</li>
+          <li>Create Events</li>
+          <li>Add photos and posts</li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="right_column_homepage">
-    <h1>Signup!</h1>
-    <%= render "form" %>
+    <div class="right_column_homepage">
+      <h1>Signup!</h1>
+      <%= render "form" %>
+    </div>
   </div>
 </div>

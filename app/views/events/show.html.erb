@@ -44,8 +44,8 @@
           <% end %>
         </div>
         <div class="comment_container">
-          <%= form_for [@event, post, @comment], :html => {:class => "comment_form"} do |f| %>
-            <%= f.text_field :comment_content, :required => true, :placeholder => "Write a comment...", :class => "comment_field" %>
+          <%= form_for [@event, post, @comment], :html => {:class => "comment_form", :id => "post_id_#{post}"} do |f| %>
+            <%= f.text_field :comment_content, :required => true, :placeholder => "Write a comment...", :class => "comment_field", :id => "comment_id_#{post}" %>
             <%= f.submit :style => "display: none;" %>
           <% end %>
           <% post.comments.each do |comment| %>

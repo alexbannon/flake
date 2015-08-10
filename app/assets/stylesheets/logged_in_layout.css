@@ -15,16 +15,19 @@ body {
   max-width: 1299px;
 }
 .left_sidebar {
-  flex: 1 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
   margin: 0 5px;
 }
 .main_layout {
-  flex: 2 1 auto;
+  flex-grow: 2;
+  flex-shrink: 1;
   margin: 0 auto;
   width: 532px;
 }
 .right_sidebar {
-  flex: 1 1 auto;
+  flex-grow: 1;
+  flex-shrink: 1;
   margin: 0 5px;
 }
 .event_image {

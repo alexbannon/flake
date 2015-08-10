@@ -28,7 +28,7 @@
   <% else %>
     <div class="top_bar">
       <a href="/" class="logo_link"><%= image_tag("flake_logo.png", class: "logo")%></a>
-      <a>
+      <div>
         <div class="signin_button">
           <span class="signin_word">Sign In!</span>
           <%= form_tag(sessions_path, class: "signin") do %>
@@ -36,7 +36,7 @@
             <%= password_field_tag(:password, "", placeholder: "Password") %>
           <% end %>
         </div>
-      </a>
+      </div>
     </div>
   <% end %>
 <%= yield %>

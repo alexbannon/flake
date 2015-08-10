@@ -14,13 +14,13 @@
     </div>
   </div>
   <div id = "change_container">
-    <span id = >Change Password</span>
-    <%= form_tag("/users/#{@user.id}/changepw", method: "put") do %>
+    <span>Change Password</span>
+    <%= form_tag("/users/#{@user.id}/changepw", method: "put", id: "something_unique") do %>
       <div>
         <%= password_field_tag(:old_password, "", placeholder: "Old Password") %>
       </div>
       <div>
-        <%= password_field_tag(:password, "", placeholder: "New Password") %>
+        <%= password_field_tag(:password, "", placeholder: "New Password", id: "something_else_unique") %>
       </div>
       <div>
         <%= password_field_tag(:password_confirmation, "", placeholder: "Confirm Password") %>
