@@ -10,3 +10,5 @@ Watch a brief runthrough video: https://www.youtube.com/watch?v=7Or0N7yewAA
 # Wireframe, UserStories, and ERD:
 
 https://github.com/alexbannon/flake/tree/master/Planning
+
+Trello Board: https://trello.com/b/suDaESNI/project-2
