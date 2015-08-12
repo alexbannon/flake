@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
     @search = params[:user_search]
     @search_events = Event.where("title ILIKE (?)", "%#{@search}%")
     @search_users = User.where("first_name ILIKE (?)", "%#{@search}%") + User.where("last_name ILIKE (?)", "%#{@search}%")
+    # search_split might be better named @search_terms to indicate what it is
     @search_split = @search.split
     if @search_split.length > 1
       @search_first_last_user = User.where("first_name ILIKE (?)", "%#{@search_split.first}%") && User.where("last_name ILIKE (?)", "%#{@search_split.last}%")

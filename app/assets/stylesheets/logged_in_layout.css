@@ -1,3 +1,6 @@
+/* this file is included everywhere, so 'logged in layout may not be the clearest
+name here' */
+
 * {
   box-sizing: border-box;
 }

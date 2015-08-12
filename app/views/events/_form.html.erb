@@ -1,3 +1,7 @@
+<!-- from what I can tell, you're not actually associating the event with a user
+directly (rather by using current_user and creating an attendance. This means
+you can likely get rid of this nested route in form_for) -->
+
 <%= form_for [@user, @event] do |f| %>
 <% if @event.errors.any? %>
   <h4 class="flash_message">Form is invalid</h4>

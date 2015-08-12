@@ -3,12 +3,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authorize
-  private
 
+  # a note on style, generally we put a blank line before 'private' / 'protected'
+  # and then no blank line before the following methods, like so
+
+  private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  # why do this? `current_user` returns a user object, so I would just use (call)
+  # current_user everywhere I wanted who was logged in.
+  # (current_user is also more clearly named than `user_helper`)
   def user_helper
     @user = User.find(session[:user_id])
   end
