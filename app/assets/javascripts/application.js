@@ -25,6 +25,8 @@ $(document).ready(function() {
       this.submit();
     }
   })
+  // suggestion: use whitespace / newlines to separate unrelated blocks
+  // of code
   $(".settings_button").on("click", function() {
     $(".dropdown_container").toggle("slow");
   })

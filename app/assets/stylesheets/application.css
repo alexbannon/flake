@@ -22,6 +22,12 @@ a {
   color: black;
 }
 .top_bar {
+  /*
+    make sure when using new / advanced features to check can I use (or simialar)
+    http://caniuse.com/#search=flex
+    for example, flexbox isn't a final standard yet, so you need to also add
+    webkit prefixes to support safari
+   */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -44,6 +50,10 @@ a {
   width: 250px;
   margin: 42px 0 0 20px;
 }
+
+/* instead of 4 different classes, I'd suggest making this class 'button'
+and using that in your HTML until you need more specificty
+*/
 .new_event_button, .settings_button, .signup_button, .signin_button {
   flex: 0 1 0;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
@@ -52,6 +62,7 @@ a {
   margin: 37px 0 0 0;
   color: rgb(20, 90, 130);
 }
+
 .left_column_homepage {
   font-family: 'Cagliostro', sans-serif;
   margin: 25px auto 0 auto;

@@ -47,6 +47,7 @@ class EventsController < ApplicationController
     @users = @event.users
   end
 
+  # I like these additional actions / routes!
   def join
     @event = Event.find(params[:id])
     user_helper

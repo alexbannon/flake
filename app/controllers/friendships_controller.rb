@@ -2,6 +2,7 @@ class FriendshipsController < ApplicationController
 
   def create
     user_helper
+    # great use of .build here!
     @friendship = @user.friendships.build(:friend_id => params[:friend_id])
     if @friendship.save
       redirect_to root_url
